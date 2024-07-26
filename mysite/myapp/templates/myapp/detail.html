@@ -1,3 +1,6 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h1>
-        This detail page for (ОПИСАНЕ) : {{item.name}}, {{item.description}}, {{item.price}}, 
+        This detail page for ОПИСАНЕ ТОВАРА : {{item.name}}, {{item.description}}, {{item.price}}, 
     </h1>
 
 </body>
 </html>
+
+{% endblock content %}

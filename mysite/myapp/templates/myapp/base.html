@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-    <title>Document</title>
+    <title>SmartShop</title>
 </head>
 <body>
+
+    {% include "myapp/navbar.html" %}
+
     {% block content %}
     {% endblock content %}
 </body>
