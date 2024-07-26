@@ -5,13 +5,14 @@
 	
 	<!-- <h1>hello world and index!!!!11 :0 </h1>
     <h1>Вот список товаров. Выбери что интресно !!!!</h1> -->
-	<h2>
+		<h2>
 		{% comment %} <a href="/myapp/hello/{{item.id}}/"> {% endcomment %}
 			{% for item in items %}
 			<a href="{% url 'myapp:detail' item.id %}">
 				ID: {{item.id}} | ИМЯ: {{item.name}} <br />
-				<a>
-					{% endfor %}
-	</h2>
+				<img src="{{item.image.url}}" alt="">
+			<a>
+			{% endfor %}
+		</h2>
 	
-	{% endblock content %}
+{% endblock content %}
