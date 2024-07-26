@@ -1,20 +1,14 @@
 {% extends "myapp/base.html" %}
+{% load humanize %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>
-        This detail page for ОПИСАНЕ ТОВАРА : {{item.name}}, {{item.description}}, {{item.price}}, 
-    </h1>
-
-</body>
-</html>
+<div class="flex p-10 w-full h-200">
+    <img class="w-1/3" src="{{ item.image.url }}" alt="itemPhoto">
+    <div class="w=2/3 text-2xl ml-10 mt-5">
+        <p class="mt-6  font-mono">{{ item.name }}</p>
+        <p class="mt-6 text-green-500 font-mono">{{ item.price | intcomma }} ₽</p>
+        <p class="mt-6 text-gray-700 text-xl">{{ item.description }}</p>
+    </div>  
+</div>
 
 {% endblock content %}
