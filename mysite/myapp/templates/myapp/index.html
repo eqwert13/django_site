@@ -1,22 +1,21 @@
-<!DOCTYPE html>
+{% extends "myapp/base.html" %}
 {% load static %}
-<html lang="en">
 
-<head>
-	<link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-
-<body>
-	<nav>
-		<div>
-			<div>
-				<div>
-					<div class="flex">
-						<img class="h-16 w-16" src="{% static 'myapp/images/shop.png' %}" alt="logo" />
-						<span class="text-xl font-bold">Pro Shop</span>
+{% block content %}
+	<nav class="bg-white shadow-lg">
+		<div class="max-w-6xl mx-auto px-4">
+			<div class="flex justify-between">
+				<div class="flex space-x-7">
+					<div>
+						<a href="#" class="flex items-center px-2 py-4">
+						<img class="h-8 w-8" src="{% static 'myapp/images/shop.png' %}" alt="logo" />
+						<span class="text-gray-500 font-semibold text-xl">Smart Shop</span>
+						</a> 
+					</div>
+					<div class="items-center flex space-x-1">
+						<a href="#" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-green-500">Home</a>
+						<a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+						<a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
 					</div>
 				</div>
 			</div>
@@ -32,7 +31,5 @@
 				<a>
 					{% endfor %}
 	</h2>
-	<h2> dgdgdgdg </h2>
-</body>
-
-</html>
+	<h2> топ крутых смартфонов</h2>
+	{% endblock content %}
