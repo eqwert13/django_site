@@ -14,3 +14,15 @@ def indexItem(request, my_id):
     context = {"item": item}
     return render(request, "myapp/detail.html", context=context)
 
+
+def add_item(reqest):
+    if reqest.method ==  "POST":
+        name = reqest.POST.get("name")
+        price = reqest.POST.get("price")
+        description = reqest.POST.get("description")
+        image = reqest.FILES['upload']
+        item = Product(name=name, price=price, description=description, image=image)
+        item.save()
+
+    # code to add a new item
+    return render(reqest, "myapp/additem.html")
