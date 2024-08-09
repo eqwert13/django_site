@@ -1,5 +1,5 @@
 from django.urls import path
-from myapp.views import index, indexItem, add_item
+from myapp.views import index, indexItem, add_item, update_item
 
 app_name = "myapp"  # namespace
 
@@ -11,4 +11,5 @@ urlpatterns = [
     # http://127.0.0.1:8000/myapp/
     
     path("additem/", add_item, name="add_item"),
+    path("updateitem/<int:my_id>/", update_item, name="update_item"),
 ]
