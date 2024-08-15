@@ -4,16 +4,24 @@
 			<div class="flex justify-between">
 				<div class="flex space-x-7">
 					<div>
-						<a href="#" class="flex items-center px-2 py-4">
+						<a href="{% url 'myapp:index' %}" class="flex items-center px-2 py-4">
 						<img class="h-8 w-8 mx-3" src="{% static 'myapp/images/shopping.png' %}" alt="logo"  />
 						<span class="text-gray-700  font-semibold font-serif text-2xl">Smart Shop</span>
 						</a> 
 					</div>
 					<div class="items-center flex space-x-1">
-						<a href="/myapp/" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Home</a>
+						<a href="{% url 'myapp:index' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Home</a>
 						<a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
 						<a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Place</a>
+                        {% if user.is_authenticated %}
+						 	<form action="{% url 'users:logout' %}" method="POST">
+          						{% csrf_token %}
+          						<button class="py-4 px-2 text-gray-500 font-semibold hover:bg-gray-200" type="submit">Logout</button>
+								<a href="{% url 'users:profile' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Profile</a>
+        					</form>
+							{% else %}
+							<a href="{% url 'users:login' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Login</a>
+						{% endif %}
 						<a href="/myapp/additem/" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Add item</a>
 						<a href="/admin/" class="py-4 px-2 text-gray-500 font-semibold hover:bg-gray-200">Admin</a>
 						<a href="/users/register/" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Register</a>
