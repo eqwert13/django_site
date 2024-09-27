@@ -1,5 +1,5 @@
 from django.urls import path
-from myapp.views import index, indexItem, add_item, update_item, delete_item
+from myapp.views import index, indexItem, add_item, update_item, delete_item, about, contacts
 
 app_name = "myapp"  # namespace
 
@@ -13,4 +13,6 @@ urlpatterns = [
     path("additem/", add_item, name="add_item"),
     path("updateitem/<int:my_id>/", update_item, name="update_item"),
     path("deleteitem/<int:my_id>/", delete_item, name="delete_item"),
+    path("about/", about, name="about"),
+    path("contacts/", contacts, name="contacts"),
 ]

@@ -8,6 +8,8 @@
         <p class="mt-6  font-mono">{{ item.name }}</p>
         <p class="mt-6 text-green-500 font-mono">{{ item.price | intcomma }} ₽</p>
         <p class="mt-6 text-gray-700 text-xl">{{ item.description }}</p>
+        <p class="mt-6 text-gray-700 text-xl">Продавец <a href="{% url 'users:sellerprofile' item.seller.id %}">@{{ item.seller }}</a></p>
+        <p class="mt-6 text-gray-700 text-xl">{{ item.seller.profile.contact_number}}</p>
         <button class="bg-green-500 hover:bg-blue-700 text-white font-bold mt-[50px] rounded-full">
             <a class="font-mono" href="{% url 'myapp:update_item' item.id %}">Обновить товар</a>
         </button>

@@ -1,5 +1,20 @@
 {% extends "myapp/base.html" %}
 
 {% block content %}
-    <h1>You have been logout</h1> 
+    <br>
+     <div class="flex flex-col md:flex-row justify-center items-center mt-16">
+            <div class="md:w-1/2">
+            {% load static %}
+                <img class="h-40 w-40 mx-10" src="{% static 'myapp/images/logout.png' %}" alt="Контакты" class="rounded-lg">
+            </div>
+            <div class="md:w-1/2 md:ml-8">
+                <h2 class="text-2xl font-bold text-green-700">Ждём вас снова!</h2>
+                <ul class="list-disc ml-6">
+                    <li>Хорошего</li>
+                    <li>Вам</li>
+                    <li>Дня</li>
+                    <li>!</li>
+                </ul>
+            </div>
+        </div>
 {% endblock content %}
