@@ -13,7 +13,7 @@
 						<a href="{% url 'myapp:index' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Главная</a>
 						<a href="{% url 'myapp:about' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">О нас</a>
 						<a href="{% url 'myapp:contacts' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Контакты</a>
-                        {% if user.is_authenticated %}
+                        {% comment %} {% if user.is_authenticated %}
 						 	<form action="{% url 'users:logout' %}" method="POST">
           						{% csrf_token %}
           						<button class="py-4 px-2 text-gray-500 font-semibold hover:bg-gray-200" type="submit">Выход</button>
@@ -21,12 +21,27 @@
         					</form>
 							{% else %}
 							<a href="{% url 'users:login' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Вход</a>
-						{% endif %}
-						<a href="/myapp/additem/" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Добавить товар</a>
+							
+						{% endif %} {% endcomment %}
+						{% comment %} <a href="{% url 'users:register' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Регистрация</a> {% endcomment %}
+						<a href="{% url 'myapp:add_item' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Добавить товар</a>
 						<a href="/admin/" class="py-4 px-2 text-gray-500 font-semibold hover:bg-gray-200">Admin</a>
-						<a href="/users/register/" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Регистрация</a>
 					</div>
 				</div>
+
+				<div class=" items-center flex space-x-1 text-right">
+					{% if user.is_authenticated %}
+						 	<form action="{% url 'users:logout' %}" method="POST">
+          						{% csrf_token %}
+								<a href="{% url 'users:profile' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Мой профиль</a>
+          						<button class="py-4 px-2 text-gray-500 font-semibold hover:bg-gray-200" type="submit">Выход 🔒</button>
+        					</form>
+							{% else %}
+							<a href="{% url 'users:login' %}" class="py-4 px-2 text-gray-500 font-semibold  hover:bg-gray-200">Вход 🔐</a>
+							
+						{% endif %}
+				</div>
+
 			</div>
 		</div>
 	</nav>

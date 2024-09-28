@@ -15,4 +15,5 @@ urlpatterns = [
     path("deleteitem/<int:my_id>/", delete_item, name="delete_item"),
     path("about/", about, name="about"),
     path("contacts/", contacts, name="contacts"),
+    
 ]
