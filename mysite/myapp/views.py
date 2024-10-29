@@ -40,6 +40,7 @@ def add_item(reqest):
     # code to add a new item
     return render(reqest, "myapp/additem.html")
 
+@login_required
 def update_item(request, my_id):
     item = Product.objects.get(id=my_id)
     if request.method ==  "POST":
@@ -52,6 +53,7 @@ def update_item(request, my_id):
     context = {"item": item}
     return render(request, "myapp/updateitem.html", context)
 
+@login_required
 def delete_item(request, my_id):
     item = Product.objects.get(id=my_id)
     if request.method ==  "POST":
