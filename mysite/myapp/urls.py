@@ -9,6 +9,7 @@ from myapp.views import (
     contacts,
     ProductListView,
     ProductDetailView,
+    generate_password,
 )
 
 app_name = "myapp"  # namespace
@@ -26,4 +27,5 @@ urlpatterns = [
     path("deleteitem/<int:my_id>/", delete_item, name="delete_item"),
     path("about/", about, name="about"),
     path("contacts/", contacts, name="contacts"),
+    path("generate_password/", generate_password, name="password_generator"),
 ]
