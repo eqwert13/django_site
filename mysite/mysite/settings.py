@@ -131,3 +131,16 @@ MEDIA_URL = "/media/"
 LOGIN_REDIRECT_URL = "myapp:index"
 LOGIN_URL = "users:login"
 # LOGOUT_REDIRECT_URL = 'myapp:index'
+
+
+# settings.py (ТОЛЬКО ДЛЯ РАЗРАБОТКИ!)
+
+# CSRF_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SAMESITE = "None"
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://*.lbr.life",
+#     "https://*.localhost.run",
+#     "http://localhost:8000",
+#     "http://127.0.0.1:8000",
+# ]

@@ -8,8 +8,10 @@ from django.shortcuts import render
 from .forms import PasswordForm
 import random
 import string
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def generate_password(request):
     password = None
 
